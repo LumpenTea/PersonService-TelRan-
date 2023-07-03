@@ -67,4 +67,14 @@ public class PersonController {
 	public PersonDto deletePerson(@PathVariable Integer id) {
 		return personService.deletePerson(id);
 	}
+	
+	@GetMapping("/children")
+	public List<PersonDto> getAllChildren() {
+		return personService.getAllChildren();
+	}
+	
+	@GetMapping("/salary/{from}/{to}")
+	public List<PersonDto> getEmployeesBySalary(@PathVariable Integer from, @PathVariable Integer to) {
+		return personService.getEmployeesBySalary(from, to);
+	}
 }
